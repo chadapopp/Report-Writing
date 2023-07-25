@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container welcome">
+    <h1>Edit Equipment</h1>
+    <form action="/equipment/edit_equipment/{{ equipment.id }}" method="post">
+        <div class="mb-3 col-4">
+          <label for="equipment_type" class="form-label">Type</label>
+          <select class="mb-3 col-4 form-control" name="equipment_type" id="equipment_type">
+            <option value="Exchanger" {% if equipment.equipment_type == 'Exchanger' %} selected {% endif %}>Exchanger</option>
+            <option value="Drum" {% if equipment.equipment_type == 'Drum' %} selected {% endif %}>Drum</option>
+            <option value="Tower" {% if equipment.equipment_type == 'Tower' %} selected {% endif %}>Tower</option>
+            <option value="Reactor" {% if equipment.equipment_type == 'Reactor' %} selected {% endif %}>Reactor</option>
+            <option value="Heater" {% if equipment.equipment_type == 'Heater' %} selected {% endif %}>Heater</option>
+          </select>
+        </div>
+        <div class="mb-3 col-4">
+            <label for="equipment_number" class="form-label">Equipment Number</label>
+            <input type="text" class="form-control" name="equipment_number" id="equipment_number" value="{{ equipment.equipment_number }}">
+        </div>
+        <div class="mb-3 col-4">
+          <label for="equipment_name" class="form-label">Equipment Name</label>
+          <input type="text" class="form-control" name="equipment_name" id="equipment_name" value="{{ equipment.equipment_name }}">
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+</div>
+
+{% endblock %}

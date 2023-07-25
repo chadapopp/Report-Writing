@@ -1,0 +1,34 @@
+.equipment-select {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.equipment-select a {
+    text-decoration: none;
+    color: black;
+    padding: 50px;
+}
+
+.equipment-select li:hover {
+    background-color: gray;
+}
+
+.equipment-select li {
+    border: 2px solid black;
+    background-color: lightgray;
+    border-radius: 10px;
+
+}
+
+.equip-header {
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.welcome {
+    margin-top: 70px;
+}

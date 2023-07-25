@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container text-center welcome">
+    <h1>Welcome {{ user.first_name }} {{ user.last_name }}</h1>
+</div>
+
+<div class="container">
+    <ul class="equipment-select row">
+      <li class="col-12 col-sm-6 col-md-4">
+        <a href="/equipment/view_exchangers/{{user.id}}">
+            <div class="list-item-content">Exchangers</div>
+        </a>
+      </li>
+      <li class="col-12 col-sm-6 col-md-4">
+        <a href="/equipment/view_drums/{{user.id}}">
+            <div class="list-item-content">Drums</div>
+        </a>
+      </li>
+      <li class="col-12 col-sm-6 col-md-4">
+        <a href="/equipment/view_tower_reactor/{{user.id}}">
+            <div class="list-item-content">Towers/Reactors</div>
+        </a>
+      </li>
+      <li class="col-12 col-sm-6 col-md-4">
+        <a href="/equipment/view_heaters/{{user.id}}">
+            <div class="list-item-content">Heaters</div>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="container text-center">
+    <a href="/logout" class="btn btn-warning"> Logout </a>
+    <a href="/equipment/create_equipment" class="btn btn-success">Add New Equipment</a>
+    <a href="/equipment/view_all_equipment/{{user.id}}" class="btn btn-primary">View All My Reports</a>
+  </div>
+  
+
+{% endblock %}

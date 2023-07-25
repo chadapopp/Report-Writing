@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container welcome">
+    <h1>All Exchangers</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Type</th>
+                <th scope="col">Number</th>
+                <th scope="col">Name</th>
+                <th scope="col">Report Actions</th>
+                <th scope="col">Equipment Actions</th>
+            </tr>
+        </thead>
+        {% for item in equipment %}
+        <tbody>
+            <tr>
+                <td>{{ item.equipment_type }}</td>
+                <td>{{ item.equipment_number }}</td>
+                <td> {{item.equipment_name}} </td>
+                <td>
+                    <a href="/report/view_report" class="btn btn-success mb-1">View Report</a> <br> 
+                    <a href="/report/edit_report" class="btn btn-primary mb-1">Edit Report</a><br>
+                    <a href="/report/delete_report" class="btn btn-danger">Delete Report</a>
+                </td>
+                <td>
+                    <a href="/equipment/edit_equipment/{{equipment.id}}" class="btn btn-primary mb-1">Edit Equipment</a><br>
+                    <a href="/equipment/delete_report" class="btn btn-danger">Delete Equipment</a><br>
+                </td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock %}
